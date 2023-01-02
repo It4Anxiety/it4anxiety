@@ -54,6 +54,20 @@
                     </li>
                     {{ end }}
 
+                    {{ if and (.Site.Params.partener.enable | default false) (not (.Site.Params.navbar.menus.disablePartener | default false)) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#partener"
+                           aria-label="partener">Our parteners</a>
+                    </li>
+                    {{ end }}
+
+                    {{ if and (.Site.Params.ourstart.enable | default false) (not (.Site.Params.navbar.menus.disableOurstart | default false)) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#ourstart"
+                           aria-label="ourstart">Our startups</a>
+                    </li>
+                    {{ end }}
+
                     {{ if and (.Site.Params.professional.enable | default false) (not (.Site.Params.navbar.menus.disableProfessional | default false)) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#professional"
