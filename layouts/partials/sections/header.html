@@ -103,6 +103,13 @@
                     </li>
                     {{ end }}
 
+                    {{ if and (.Site.Params.contact.enable | default false) (not (.Site.Params.navbar.menus.disableContact | default false)) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#contact"
+                            aria-label="contact">Join us</a>
+                    </li>
+                    {{ end }}
+
                     <!-- custom menus from the user -->
                     {{ range .Site.Menus.main }}
                     {{ if .HasChildren }}
